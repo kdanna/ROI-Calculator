@@ -14,13 +14,36 @@
   </head>
 
   <body ng-app="myApp">
-    <h1>ROI Calculator</h1>
+ 
+    <form class="form" ng-submit="addRevenue()" ng-controller="mainController">
+      <h5>Add Revenue Item</h5>
+        <fieldset class ="container-fluid">
+              <div class="form-group row">
+                    <label class="col-md-2">Item Description</label>
+                    <input class="col-md-2" type="text" ng-model="itemDescription" placeholder="Enter Item">
+              </div>
+              
+              <div class="form-group row">
+                  <label class="col-md-2">One Time ($USD)</label>
+                  <input class="col-md-2" type="number" ng-model="oneTimeRev" name="currency" min="0" max="99999" step="1.00" size="4"/>
+              </div>
+              
+              <div class="form-group row">
+                  <label class="col-md-2">Monthly ($USD)</label>
+                  <input class="col-md-2" type="number" ng-model="monthlyRev" name="currency" min="0" max="99999" step="1.00" size="4"/>
+              </div>
+              
+              <div class="form-group row">
+                <div class="col-md-4">
+                  <button class="btn btn-inverse" ng-click="addRevenue()" type='Submit' value="Submit">Add Revenue Item</button>
+                </div>
+              </div>
+        </fieldset>
+    </form>
+   
     
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <div>
-      Testing that Angular is working: Hello, {{yourName}}
-    </div>
-    <div id="revenue-table" class="table-responsive container-fluid">  
+
+    <div id="revenue-table" class="table-responsive container-fluid" ng-controller="mainController">  
       <div class="row col-md-8 offset-md-2">
         <table class="table table-hover">
           <thead class="thead-inverse">
@@ -33,22 +56,12 @@
           </thead>
           <tbody>
             <tr>
-              <th>Item 1</th>
-              <td>$100</td>
-              <td>$50</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Item 2</th>
-              <td>$50</td>
-              <td>$25</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Item 3</th>
-              <td>$25</td>
-              <td>$85</td>
-              <td></td>
+              <th>{{}}</th>
+              <td>{{}}</td>
+              <td>{{}}</td>
+              <td>
+                <button class="btn btn-outline-secondary btn-md" ng-click=''>Delete</button>
+              </td>
             </tr>
             <tr>
               <th>Totals</th>
@@ -70,13 +83,9 @@
               <th>Expense 1</th>
               <td>$500</td>
               <td>$20</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Expense 2</th>
-              <td>$200</td>
-              <td>$20</td>
-              <td></td>
+              <td>
+                <button class="btn btn-outline-secondary btn-md" ng-click=''>Delete</button>
+              </td>
             </tr>
             <tr>
               <th>Totals</th>
