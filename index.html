@@ -15,7 +15,8 @@
 
   <body ng-app="myApp">
  
-    <form class="form" ng-submit="addRevenue()" ng-controller="mainController">
+  <div ng-controller="mainCtrl"> 
+    <form class="form">
       <h5>Add Revenue Item</h5>
         <fieldset class ="container-fluid">
               <div class="form-group row">
@@ -43,7 +44,7 @@
    
     
 
-    <div id="revenue-table" class="table-responsive container-fluid" ng-controller="mainController">  
+    <div id="revenue-table" class="table-responsive container-fluid">  
       <div class="row col-md-8 offset-md-2">
         <table class="table table-hover">
           <thead class="thead-inverse">
@@ -56,9 +57,9 @@
           </thead>
           <tbody>
             <tr>
-              <th>{{}}</th>
-              <td>{{}}</td>
-              <td>{{}}</td>
+              <th>{{revDescs}}</th>
+              <td>{{oneTimeRevs}}</td>
+              <td>{{monthlyRevs}}</td>
               <td>
                 <button class="btn btn-outline-secondary btn-md" ng-click=''>Delete</button>
               </td>
@@ -97,7 +98,7 @@
         </table>
       </div>
     </div>
- 
+  </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

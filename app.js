@@ -1,19 +1,25 @@
 var app = angular.module("myApp", []);
 
 
-app.controller('mainController', function($scope) {
-	$scope.itemDescription = "";
-	$scope.addRevenue = addRevenue;
-	$scope.revDesc = [];
+app.controller('mainCtrl', function($scope){
+	$scope.itemDescription = '';
+	$scope.revDescs = [];
+	$scope.oneTimeRevs = [];
+	$scope.monthlyRevs = [];
 
-	function addRevenue() {
-		console.log('made it to the addRev');
+	$scope.addRevenue = function(){
    		if ($scope.itemDescription){
-   			$scope.revDesc.push(this.itemDescription);  
+   			$scope.revDescs.push(this.itemDescription);  
+      	}
+      	if ($scope.oneTimeRev){
+      		$scope.oneTimeRevs.push(this.oneTimeRev);
+      	}
+      	if ($scope.monthlyRev){
+      		$scope.monthlyRevs.push(this.monthlyRev);
       	}
       	$scope.itemDescription="";
-      	console.log($scope.revDesc);
-     }
+      	$scope.oneTimeRev="";
+      	$scope.monthlyRev="";
+	};
 
- 	
 });
