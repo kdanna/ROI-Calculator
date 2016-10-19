@@ -21,22 +21,22 @@
         <fieldset class ="container-fluid">
               <div class="form-group row">
                     <label class="col-md-2">Item Description</label>
-                    <input class="col-md-2" type="text" ng-model="itemDescription" placeholder="Enter Item">
+                    <input class="col-md-2" type="text" ng-model="revenue.itemDescription" placeholder="Enter Item">
               </div>
               
               <div class="form-group row">
                   <label class="col-md-2">One Time ($USD)</label>
-                  <input class="col-md-2" type="number" ng-model="oneTimeRev" name="currency" min="0" max="99999" step="1.00" size="4"/>
+                  <input class="col-md-2" type="number" ng-model="revenue.oneTimeRev" name="currency" min="0" max="99999" step="1.00" size="4"/>
               </div>
               
               <div class="form-group row">
                   <label class="col-md-2">Monthly ($USD)</label>
-                  <input class="col-md-2" type="number" ng-model="monthlyRev" name="currency" min="0" max="99999" step="1.00" size="4"/>
+                  <input class="col-md-2" type="number" ng-model="revenue.monthlyRev" name="currency" min="0" max="99999" step="1.00" size="4"/>
               </div>
               
               <div class="form-group row">
                 <div class="col-md-4">
-                  <button class="btn btn-inverse" ng-click="addRevenue()" type='Submit' value="Submit">Add Revenue Item</button>
+                  <button class="btn btn-inverse" ng-click="addRevenue(revenue)" type='Submit' value="Submit">Add Revenue Item</button>
                 </div>
               </div>
         </fieldset>
@@ -57,9 +57,9 @@
           </thead>
           <tbody>
             <tr>
-              <th>{{revDescs}}</th>
-              <td>{{oneTimeRevs}}</td>
-              <td>{{monthlyRevs}}</td>
+              <th>{{revenue.itemDescription}}</th>
+              <td>{{revenue.oneTimeRev}}</td>
+              <td>{{revenue.monthlyRev}}</td>
               <td>
                 <button class="btn btn-outline-secondary btn-md" ng-click=''>Delete</button>
               </td>
